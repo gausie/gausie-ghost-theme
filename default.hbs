@@ -33,6 +33,7 @@
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/socialicious.css" />
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
@@ -50,14 +51,22 @@
          </div>
     </header>
 
+    <nav id="social-media">
+        <ul>
+              <li><a href="http://github.com/gausie" title="github @gausie"><i class="icon-2x icon-github"></i></a></li>
+              <li><a href="http://twitter.com/gausie" title="twitter @gausie"><i class="icon-2x icon-twitter"></i></a></li>
+              <li><a href="http://last.fm/user/gausie" title="last.fm @gausie"><i class="icon-2x icon-lastfm"></i></a></li>
+        </ul>
+    </nav>
+
     {{! Everything else gets inserted here }}
     {{{body}}}
 
     <footer class="site-footer">
-        <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
+        <a class="subscribe casper-icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
         <div class="inner">
-             <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2013 &bull; All rights reserved.</section>
-             <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://ghost.org">Ghost</a></section>
+             <!-- <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2013 &bull; All rights reserved.</section> -->
+             <section class="poweredby">Proudly published with <a class="casper-icon-ghost" href="http://ghost.org">Ghost</a></section>
         </div>
     </footer>
 
