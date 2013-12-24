@@ -13,23 +13,60 @@
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    {{! Favicons }}
+    <meta name="msapplication-square70x70logo" content="/assets/images/windows-tile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="/assets/images/windows-tile-150x150.png">
+    <meta name="msapplication-square310x310logo" content="/assets/images/windows-tile-310x310.png">
+    <meta name="msapplication-TileImage" content="/assets/images/windows-tile-144x144.png">
+    <meta name="msapplication-TileColor" content="#696E696E696E">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/images/apple-touch-icon-152x152-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/images/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/assets/images/apple-touch-icon-76x76-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/assets/images/apple-touch-icon-60x60-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon.png">
+
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/socialicious.css" />
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
 
+    {{! The big featured header on the homepage, with the site logo and description }}
+    <header id="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+         <div class="vertical">
+             <div id="site-head-content" class="inner">
+                  {{#if @blog.logo}}<a id="blog-logo" href="http://gaus.ie"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+                  <h1 class="blog-title">{{@blog.title}}</h1>
+                  <h2 class="blog-description">{{@blog.description}}</h2>
+              </div>
+         </div>
+    </header>
+
+    <nav id="social-media">
+        <ul>
+              <li><a href="http://github.com/gausie" title="github @gausie"><i class="icon-2x icon-github"></i></a></li>
+              <li><a href="http://twitter.com/gausie" title="twitter @gausie"><i class="icon-2x icon-twitter"></i></a></li>
+              <li><a href="http://last.fm/user/gausie" title="last.fm @gausie"><i class="icon-2x icon-lastfm"></i></a></li>
+        </ul>
+    </nav>
+
     {{! Everything else gets inserted here }}
     {{{body}}}
 
     <footer class="site-footer">
-        <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
+        <a class="subscribe casper-icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
         <div class="inner">
-             <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2013 &bull; All rights reserved.</section>
-             <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://ghost.org">Ghost</a></section>
+             <!-- <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2013 &bull; All rights reserved.</section> -->
+             <section class="poweredby">Proudly published with <a class="casper-icon-ghost" href="http://ghost.org">Ghost</a></section>
         </div>
     </footer>
 
