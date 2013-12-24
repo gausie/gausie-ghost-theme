@@ -361,12 +361,19 @@ table.plain {
     position: relative;
     display: table;
     width: 100%;
-    height: 60%;
     margin-bottom: 5rem;
     text-align: center;
     color: #fff;
-    background: #303538 no-repeat center center;
+    background: #12C908 no-repeat center center;
     background-size: cover;
+}
+
+body.home-template #site-head {
+    height: 60%;
+}
+
+body.page-template #site-head {
+    height: 20%;
 }
 
 /* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
@@ -377,6 +384,22 @@ table.plain {
     margin: 0 auto;
     line-height: 0;
 }
+
+body.post-template #blog-logo img {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+}
+
+#blog-logo img:hover {
+    -webkit-animation:spin 0.2s linear;
+       -moz-animation:spin 0.2s linear;
+            animation:spin 0.2s linear;
+}
+
+@-moz-keyframes    spin { 100% {    -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes         spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 #back {
     color: rgba(0,0,0,0.2);
@@ -394,6 +417,10 @@ table.plain {
     letter-spacing: -1px;
 }
 
+body.post-template .blog-title {
+    display: inline-block;
+}
+
 .blog-description {
     margin: 0;
     font-size: 1.8rem;
@@ -401,6 +428,10 @@ table.plain {
     font-weight: 300;
     font-family: 'Droid Serif', serif;
     letter-spacing: 0;
+}
+
+body.post-template .blog-description {
+    display: none;
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
