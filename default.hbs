@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-    {{! Document Settings }}
+  
+  <head>
+  
+    {{! Document Settings}}
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
@@ -37,37 +39,57 @@
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
-</head>
-<body class="{{body_class}}">
+  
+  </head>
+
+  <body class="{{body_class}}">
 
     {{! The big featured header on the homepage, with the site logo and description }}
     <header id="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
-         <div class="vertical">
-             <div id="site-head-content" class="inner">
-                  {{#if @blog.logo}}<a id="blog-logo" href="http://gaus.ie"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-                  <h1 class="blog-title">{{@blog.title}}</h1>
-                  <h2 class="blog-description">{{@blog.description}}</h2>
-              </div>
-         </div>
+       <div class="vertical">
+         <div id="site-head-content" class="inner">
+            {{#if @blog.logo}}<a id="blog-logo" href="http://gaus.ie"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+            <h1 class="blog-title">{{@blog.title}}</h1>
+            <h2 class="blog-description">{{@blog.description}}</h2>
+          </div>
+       </div>
     </header>
 
     <nav id="social-media">
-        <ul>
-              <li><a href="http://github.com/gausie" title="github @gausie"><i class="icon-2x icon-github"></i></a></li>
-              <li><a href="http://twitter.com/gausie" title="twitter @gausie"><i class="icon-2x icon-twitter"></i></a></li>
-              <li><a href="http://last.fm/user/gausie" title="last.fm @gausie"><i class="icon-2x icon-lastfm"></i></a></li>
-        </ul>
+      <ul>
+        <li>
+          <a href="http://github.com/gausie" title="github @gausie">
+            <i class="icon-2x icon-github">
+              <span class="tooltip below">@gausie</span>
+            </i>
+          </a>
+         </li>
+        <li>
+          <a href="http://twitter.com/gausie" title="twitter @gausie">
+            <i class="icon-2x icon-twitter">
+              <span class="tooltip below">@gausie</span>
+            </i>
+          </a>
+        </li>
+        <li>
+          <a href="http://last.fm/user/gausie" title="last.fm @gausie">
+            <i class="icon-2x icon-lastfm">
+              <span class="tooltip below">@gausie</span>
+            </i>
+          </a>
+        </li>
+      </ul>
     </nav>
 
     {{! Everything else gets inserted here }}
     {{{body}}}
 
     <footer class="site-footer">
-        <a class="subscribe casper-icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
-        <div class="inner">
-             <!-- <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2013 &bull; All rights reserved.</section> -->
-             <section class="poweredby">Proudly published with <a class="casper-icon-ghost" href="http://ghost.org">Ghost</a></section>
-        </div>
+      <a class="subscribe casper-icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip above">Subscribe!</span></a>
+      <div class="inner">
+        <!-- <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2013 &bull; All rights reserved.</section> -->
+        <section class="poweredby">Proudly published with <a class="casper-icon-ghost" href="http://ghost.org">Ghost</a></section>
+      </div>
     </footer>
 
     {{! Ghost outputs important scripts and data with this tag }}
@@ -76,5 +98,5 @@
     {{! The main JavaScript file for Casper }}
     <script type="text/javascript" src="/assets/js/index.js"></script>
 
-</body>
+  </body>
 </html>
